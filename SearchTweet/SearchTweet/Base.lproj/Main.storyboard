@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="SearchController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="SearchController" customModule="SearchTweet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Search tweet" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y7g-wO-Eob">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aZc-cU-A74">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="de8-ks-aN2">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="SiA-x2-boa">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxG-u0-TaL">
+                                <rect key="frame" x="157" y="116" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.3134886622428894" green="0.74811220169067383" blue="0.98543649911880493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Se2-im-SQp"/>
+                                </constraints>
+                                <state key="normal" title="New Tweets">
+                                    <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="yPJ-j0-mbE">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <color key="color" red="0.31348866219999999" green="0.74811220170000003" blue="0.98543649909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yPJ-j0-mbE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3DJ-MA-KdZ"/>
+                            <constraint firstItem="y7g-wO-Eob" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AaD-vO-0wl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aZc-cU-A74" secondAttribute="trailing" id="Bl5-Ee-BJR"/>
+                            <constraint firstItem="mxG-u0-TaL" firstAttribute="top" secondItem="y7g-wO-Eob" secondAttribute="bottom" constant="16" id="DBV-P7-L8c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aZc-cU-A74" secondAttribute="bottom" id="Ih9-yD-r5x"/>
+                            <constraint firstAttribute="trailing" secondItem="y7g-wO-Eob" secondAttribute="trailing" id="S24-hr-ZrV"/>
+                            <constraint firstItem="aZc-cU-A74" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b8C-wm-QEb"/>
+                            <constraint firstItem="y7g-wO-Eob" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cae-ah-1q2"/>
+                            <constraint firstItem="mxG-u0-TaL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kRM-A0-oz8"/>
+                            <constraint firstItem="aZc-cU-A74" firstAttribute="top" secondItem="y7g-wO-Eob" secondAttribute="bottom" id="llv-Oe-zzI"/>
+                            <constraint firstItem="yPJ-j0-mbE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u5T-Wi-vj8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="yPJ-j0-mbE" id="Vz9-0I-Fy2"/>
+                        <outlet property="collectionView" destination="aZc-cU-A74" id="Irh-Lv-hrU"/>
+                        <outlet property="newTweetButton" destination="mxG-u0-TaL" id="2J4-Ea-U7X"/>
+                        <outlet property="searchBar" destination="y7g-wO-Eob" id="jqh-Vf-9e9"/>
+                        <outlet property="searchDisplayController" destination="iFu-3u-m3U" id="aIs-yn-M1W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="iFu-3u-m3U">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="YEw-ZJ-8db"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="OnL-Yq-zti"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="GQS-WQ-SLb"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="ZML-5U-wo7"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="41.517857142857139"/>
+        </scene>
+    </scenes>
+</document>
