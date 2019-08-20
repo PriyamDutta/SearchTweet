@@ -60,7 +60,7 @@ final class SearchViewModel: SearchViewModelType, SearchViewModelInputProtocol, 
             tweets.onNext(cachedTweets)
             NetworkManager.getMostRecentTweets(cachedTweets.first!.id, success: { [weak self] (newTweets) in
                 guard let weakSelf = self else { return }
-                weakSelf.newTweets.onNext(newTweets)
+//                weakSelf.newTweets.onNext(newTweets)
                 weakSelf.isSearchServiceRunning.onNext(false)
             }) { (_) in
             }
